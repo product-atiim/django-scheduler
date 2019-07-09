@@ -1,5 +1,8 @@
 import datetime
-from django.core.urlresolvers import reverse
+try:
+    from django.core.urlresolvers import reverse
+except ImportError:
+    from django.urls import reverse
 from django.test.utils import override_settings
 import pytz
 

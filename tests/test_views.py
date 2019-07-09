@@ -3,7 +3,10 @@ import datetime
 
 from django.test.utils import override_settings
 from django.test import TestCase
-from django.core.urlresolvers import reverse
+try:
+    from django.core.urlresolvers import reverse
+except ImportError:
+    from django.urls import reverse
 
 from schedule.models.calendars import Calendar
 from schedule.models.events import Event
