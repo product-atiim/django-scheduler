@@ -3,7 +3,10 @@ from django.utils.six.moves.builtins import range
 import datetime
 from django.conf import settings
 from django import template
-from django.core.urlresolvers import reverse
+try:
+    from django.core.urlresolvers import reverse
+except ImportError:
+    from django.urls import reverse
 from django.utils.dateformat import format
 from django.utils.html import escape
 from django.utils import timezone
